@@ -1,0 +1,14 @@
+@import '/src/styles.css';
+
+/* Estilo del navbar */
+.navbar {
+  background-color:rgb(92, 92, 97); /* Fondo de color gris oscuro opaco */
+}
+
+/* Estilo del borde inferior del menú */
+.border-bottom-nav {
+  max-width: 100%;
+  position: relative;
+  background: #0dcaf0;
+  padding-bottom: 4px;
+}
