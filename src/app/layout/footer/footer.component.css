@@ -1,0 +1,18 @@
+@import '/src/styles.css';
+
+/* Estilo del borde inferior del menú */
+.border-top-footer {
+  width: 100%;
+  background: var(--color-secundario);
+  padding-top: 4px;
+}
+
+.footer-bg {
+  background: var(--color-principal);
+}
+.footer-link {
+  color: aliceblue;
+}
+.footer-link:hover {
+  color: var(--color-secundario);
+}
