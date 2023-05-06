@@ -3,6 +3,7 @@
 /* Estilo del navbar */
 .navbar {
   background-color:rgb(92, 92, 97); /* Fondo de color gris oscuro opaco */
+  
 }
 
 /* Estilo del borde inferior del menú */
@@ -11,4 +12,5 @@
   position: relative;
   background: #0dcaf0;
   padding-bottom: 4px;
+  
 }

@@ -4,3 +4,7 @@
   height: auto;
   /* cualquier otro estilo que desees para el footer */
 }
+.container {
+  position: relative;
+  z-index: 1;
+}
