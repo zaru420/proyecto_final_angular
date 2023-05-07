@@ -3,3 +3,7 @@
   --color-secundario: #03e9f4;
   --color-principal: rgb(92, 92, 97);
 }
+
+body {
+  width: 100%;
+}
