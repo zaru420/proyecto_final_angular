@@ -11,6 +11,9 @@ import { MasterPageComponent } from './layout/master-page/master-page.component'
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
+import { PerfilAlumnoComponent } from './pages/perfil-alumno/perfil-alumno.component';
+import { BackNotasComponent } from './pages/back-notas/back-notas.component';
+import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { NotFoundComponent } from './pages/errors/not-found/not-found.component'
     LoginComponent,
     HomeComponent,
     NotFoundComponent,
+    PerfilAlumnoComponent,
+    BackNotasComponent,
+    InicioAlumnoComponent,
   ],
   imports: [
     CommonModule,
