@@ -1,0 +1,18 @@
+.titulos-alumnos{
+    text-align: center;
+
+    animation: cambiarColor 3s infinite; /* Aplica una animación de cambio de color durante 3 segundos */
+      }
+      
+      @keyframes cambiarColor {
+        0% { color: rgb(129, 233, 219); } /* Primer color: rojo */
+        33% { color: rgb(86, 228, 209); } /* Segundo color: verde */
+        66% { color: blue; } /* Tercer color: azul */
+      }
+    
+      
+
+.estilos-alumnos{
+    text-align: center;
+    font-weight: bold;
+}
