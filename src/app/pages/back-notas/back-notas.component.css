@@ -1,27 +1,55 @@
-/* .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+
+  .botones-cbe {
+    /* Estilos generales para los botones */
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+  transition: background-color 0.3s ease;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) {
+  .btn {
+    font-size: 18px;
+    padding: 12px 24px;
+    
   }
-  .column {
-    width: 33.33%;
-    padding: 5px;
-    box-sizing: border-box;
+}
+
+/* Estilos para desktop */
+@media (min-width: 1024px) {
+  .btn {
+    font-size: 20px;
+    padding: 15px 30px;
   }
-  .column-container {
+  .button-container {
     display: flex;
     justify-content: space-between;
   }
-  .column button {
-    display: block;
-    margin: 0 auto;
-  } */
+}
 
+    
+  }
   .button-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    
   }
+
   .column {
     width: 33.33%;
     padding: 5px;
@@ -50,4 +78,22 @@
   .dropdown-content div:hover {background-color: #f1f1f1}
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+  .form-inline {
+    padding: 20px 40px 20px 40px;
+  }
+
+  .boton-desplegable{
+    text-align: center;
+    flex: auto;
+   
+  }
+
+  .botones-cbe{
+    z-index: 999;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
   }
