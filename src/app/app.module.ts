@@ -14,8 +14,8 @@ import { NotFoundComponent } from './pages/errors/not-found/not-found.component'
 import { PerfilAlumnoComponent } from './pages/perfil-alumno/perfil-alumno.component';
 import { BackNotasComponent } from './pages/back-notas/back-notas.component';
 import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.component';
-import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { AlumnoComponent } from './pages/alumno/alumno.component';
+import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { AlumnoComponent } from './pages/alumno/alumno.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
