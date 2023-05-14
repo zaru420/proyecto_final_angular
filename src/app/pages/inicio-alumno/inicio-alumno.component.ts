@@ -6,6 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./inicio-alumno.component.css']
 })
 export class InicioAlumnoComponent {
+notifications: any;
+clearNotification(arg0: number) {
+throw new Error('Method not implemented.');
+}
   
-
+  // function mostrarNotificaciones() {
+  //   var notificaciones = document.getElementById("notificaciones");
+  //   if (notificaciones.style.display === "none") {
+  //     notificaciones.style.display = "block";
+  //   } else {
+  //     notificaciones.style.display = "none";
+  //   }
+  // }
+  
 }

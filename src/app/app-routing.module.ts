@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterPageComponent } from './layout/master-page/master-page.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -7,6 +7,8 @@ import { NotFoundComponent } from './pages/errors/not-found/not-found.component'
 import { PerfilAlumnoComponent } from './pages/perfil-alumno/perfil-alumno.component';
 import { BackNotasComponent } from './pages/back-notas/back-notas.component';
 import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.component';
+import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
+
 
 const routes: Routes = [
   {

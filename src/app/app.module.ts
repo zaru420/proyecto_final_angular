@@ -16,6 +16,7 @@ import { BackNotasComponent } from './pages/back-notas/back-notas.component';
 import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.component';
 import { AlumnoComponent } from './pages/alumno/alumno.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
+import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
     InicioAlumnoComponent,
     AlumnosComponent,
     AlumnoComponent,
+    NotificacionesComponent,
   ],
   imports: [
     CommonModule,
