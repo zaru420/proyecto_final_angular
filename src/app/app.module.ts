@@ -17,6 +17,7 @@ import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.compo
 import { AlumnoComponent } from './pages/alumno/alumno.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [

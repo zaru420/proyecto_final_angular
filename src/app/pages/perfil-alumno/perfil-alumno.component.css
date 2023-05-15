@@ -4,3 +4,10 @@
   height: 100px;
   width: 100px;
 }
+.personalizar-alumno{
+  text-align: right;
+  padding-right: 50px;
+}
+.atributos-alumnos{
+ padding-left: 20px;
+}
