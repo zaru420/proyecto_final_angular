@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class InicioAlumnoComponent {
 notifications: any;
 clearNotification(arg0: number) {
-throw new Error('Method not implemented.');
+
 }
   
   // function mostrarNotificaciones() {

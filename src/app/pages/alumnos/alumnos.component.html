@@ -1,8 +1,28 @@
-<div class="titulos-alumnos"> 
-    <h2>Bienvenido</h2> </div>
-<div class="estilos-alumnos">
-    <div><span> {{alumno.nombre}} {{alumno.apellidos}}</span></div>
-    <!-- <p>Tu nota media es: {{notas}} </p> -->
-
-    <!-- <div><span>id: </span>{{alumno.id}}</div> -->
+<div class="titulos-alumnos">
+  <h2>Los alumnos son:</h2>
+</div>
+<br>
+<div>
+  <table class="estilos-alumnos">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>DNI</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let alumno of alumnos">
+        <td>{{ alumno.id }}</td>
+        <td>{{ alumno.nombre }}</td>
+        <td>{{ alumno.apellidos }}</td>
+        <td>{{ alumno.DNI }}</td>
+        <td>{{ alumno.direccion }}</td>
+        <td>{{ alumno.telefono }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
