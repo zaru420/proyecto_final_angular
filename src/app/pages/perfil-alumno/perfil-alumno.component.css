@@ -9,5 +9,59 @@
   padding-right: 50px;
 }
 .atributos-alumnos{
- padding-left: 20px;
+  padding-left: 25px;
+  padding-top: 25px;
+  font-weight: bold;
 }
+.atributos-cursos{
+  padding-left: 20px;
+ }
+ .estilos-cursos {
+   text-align: center;
+   margin: 0 auto; /* Agrega este estilo para centrar la tabla */
+   max-width: 600px; /* Ajusta el valor según el ancho deseado */
+ }
+ 
+ .estilos-cursos table {
+   width: 100%;
+   border-collapse: collapse;
+ }
+ 
+ .estilos-cursos th, .estilos-cursos td {
+   padding: 8px;
+   border: 1px solid #000000;
+ }
+ 
+ .estilos-cursos th {
+   background-color: #525252;
+   color: #ffffff;
+   font-weight: bold;
+ }
+ 
+ .estilos-cursos tbody tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+ 
+ .estilos-cursos tbody tr:hover {
+   background-color: #e6e6e6;
+ }
+ /* atributos de los alumnos */
+ .atributos-alumnos {
+   border: 1px solid #000;
+   padding: 10px;
+   width: 200px;
+   
+ }
+
+ .prompt-perfil-alumno{
+  text-align: left;
+  font-size: larger;
+
+ }
+ .boton-guardar{
+ margin-right: 10px;
+ }
+ .user-box{
+  margin-left: 20px;
+ }
+ 
