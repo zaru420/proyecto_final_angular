@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MensajeService } from './mensaje.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AlumnosService {
+export class alumnosService {
 
-  constructor() { }
+    constructor(private alumnoService: alumnosService) {}
+
+
 }
