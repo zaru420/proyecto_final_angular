@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class NotificacionesService {
+export class MensajeService {
+  [x: string]: any;
 
   constructor() { }
 }
