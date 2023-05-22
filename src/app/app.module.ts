@@ -17,6 +17,8 @@ import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.compo
 import { AlumnoComponent } from './pages/alumno/alumno.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
 
 
 @NgModule({
@@ -32,8 +34,8 @@ import { NotificacionesComponent } from './pages/notificaciones/notificaciones.c
     BackNotasComponent,
     InicioAlumnoComponent,
     AlumnosComponent,
-    AlumnoComponent,
     NotificacionesComponent,
+    TipoUsuarioComponent,
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,7 @@ import { NotificacionesComponent } from './pages/notificaciones/notificaciones.c
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

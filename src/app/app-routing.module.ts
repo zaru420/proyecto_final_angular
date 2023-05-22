@@ -7,7 +7,8 @@ import { NotFoundComponent } from './pages/errors/not-found/not-found.component'
 import { PerfilAlumnoComponent } from './pages/perfil-alumno/perfil-alumno.component';
 import { BackNotasComponent } from './pages/back-notas/back-notas.component';
 import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.component';
-import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
+import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
+
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'perfilAlumno', component: PerfilAlumnoComponent},
       { path: 'backNotas', component: BackNotasComponent},
       { path: 'inicioAlumno', component: InicioAlumnoComponent},
+      { path: 'tipoUsuario', component: TipoUsuarioComponent},
 
       // esta tiene que ir la ultima, la de errors
       { path: '**', component: NotFoundComponent},

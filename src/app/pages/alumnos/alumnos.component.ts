@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { alumno } from '../alumno';
+import { alumno } from './alumno';
 
 enum TipoUsuario {
   alumno,
@@ -88,3 +88,5 @@ export class AlumnosComponent implements OnInit {
     ];
   }
 };
+export { alumno };
+

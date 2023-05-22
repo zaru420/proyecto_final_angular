@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { NotificacionesService } from '../notificaciones.service'; 
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
