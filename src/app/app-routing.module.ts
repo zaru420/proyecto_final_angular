@@ -11,6 +11,7 @@ import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.componen
 
 
 
+
 const routes: Routes = [
   {
     path: '', component: MasterPageComponent, // Ruta inicial, localhost:4200 y carga del master-page.
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'perfilAlumno', component: PerfilAlumnoComponent},
       { path: 'backNotas', component: BackNotasComponent},
       { path: 'inicioAlumno', component: InicioAlumnoComponent},
+      { path: 'tipoUsuario', component: TipoUsuarioComponent},
 
 
       // esta tiene que ir la ultima, la de errors
@@ -31,7 +33,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

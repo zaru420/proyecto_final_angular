@@ -2,8 +2,10 @@
 <div class="container">
   <h2>Tipos de usuario</h2>
 
+  <!-- Título del formulario -->
+  <h3>{{ isEditing ? 'Editar' : 'Nuevo' }} Tipo de Usuario</h3>
+  <!-- Contenido del formulario -->
   <div class="m-3">
-    <h2>{{ isEditing ? 'Editar' : 'Nuevo' }} Tipo de Usuario</h2>
     <form (ngSubmit)="createTipoUsuario()">
       <div class="form-group">
         <label for="nombre">Nombre</label>
@@ -20,17 +22,46 @@
       </div>
     </form>
   </div>
+    
+  <ngb-accordion>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <!-- Título del segundo panel -->
+        Lista de tipos de usuarios
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <!-- Contenido del segundo panel -->
+        <div class="container mt-3">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="searchText" (keyup)="applyFilter(filterField, searchText)">
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" [(ngModel)]="filterField" (change)="applyFilter(filterField, searchText)">
+                  <option value="">Nombre</option>
+                  <option value="funciones">Funciones</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="list-group m-3">
+          <div class="list-group-item d-flex justify-content-between" *ngFor="let tipoUsuario of filteredTipoUsuarios">
+            <div>
+              {{ tipoUsuario.id }} - {{ tipoUsuario.nombre }} - {{ tipoUsuario.funciones }}
+            </div>
+            <div>
+              <button class="btn btn-primary mr-2" (click)="editTipoUsuario(tipoUsuario)">Editar</button>
+              <button class="btn btn-danger" (click)="deleteTipoUsuario(tipoUsuario)">Borrar</button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 
-  <div class="list-group m-3">
-    <div class="list-group-item d-flex justify-content-between" *ngFor="let tipoUsuario of tipoUsuarios">
-      <div>
-        {{ tipoUsuario.id }} - {{ tipoUsuario.nombre }} - {{ tipoUsuario.funciones }}
-      </div>
-      <div>
-        <button class="btn btn-primary mr-2" (click)="editTipoUsuario(tipoUsuario)">Editar</button>
-        <button class="btn btn-danger" (click)="deleteTipoUsuario(tipoUsuario)">Borrar</button>
-      </div>
-    </div>
-  </div>
-  
 </div>

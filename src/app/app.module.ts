@@ -18,8 +18,8 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService } from './in-memory-data.service';
 
 
 
@@ -46,9 +46,9 @@ import { InMemoryDataService } from './in-memory-data.service';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-    InMemoryDataService, { dataEncapsulation: false }
-    )
+    // HttpClientInMemoryWebApiModule.forRoot(
+    // InMemoryDataService, { dataEncapsulation: false }
+    // )
   ],
   providers: [],
   bootstrap: [AppComponent]
