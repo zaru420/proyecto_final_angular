@@ -42,7 +42,7 @@ export class UsuarioComponent implements OnInit {
       if (this.route.snapshot.url[0].path === 'backNotas') {
         // no mostrar el formulario de crear usuario
         this.ocultarFormulario = true;
-      } else {
+      } else{
         this.ocultarFormulario= false;
       }
     }
