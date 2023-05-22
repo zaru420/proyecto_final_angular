@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: 'perfilAlumno', component: PerfilAlumnoComponent},
       { path: 'backNotas', component: BackNotasComponent},
       { path: 'inicioAlumno', component: InicioAlumnoComponent},
-      { path: 'tipoUsuario', component: TipoUsuarioComponent},
+
 
       // esta tiene que ir la ultima, la de errors
       { path: '**', component: NotFoundComponent},
@@ -31,6 +31,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+  
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -11,6 +11,7 @@ import { Subject } from 'rxjs';
 export class NotificacionesComponent implements OnInit, OnDestroy {
   notifications: string[] = [];
   private subscription: Subscription = new Subscription();
+notificacionesService: any;
 
   constructor(private notificationService: NotificationService) { }
 

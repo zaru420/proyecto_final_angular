@@ -14,11 +14,13 @@ import { NotFoundComponent } from './pages/errors/not-found/not-found.component'
 import { PerfilAlumnoComponent } from './pages/perfil-alumno/perfil-alumno.component';
 import { BackNotasComponent } from './pages/back-notas/back-notas.component';
 import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.component';
-import { AlumnoComponent } from './pages/alumno/alumno.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 
 
 @NgModule({
@@ -43,7 +45,10 @@ import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.componen
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule 
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+    InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
