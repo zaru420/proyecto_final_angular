@@ -1,0 +1,129 @@
+
+<div class="container">
+  <h2>Usuarios</h2>
+
+  <div *ngIf="!ocultarFormulario">
+    <!-- Título del formulario -->
+    <h3>{{ isEditing ? 'Editar' : 'Nuevo' }} Usuario</h3>
+    <div class="m-3">
+      <form (ngSubmit)="createUsuario()">
+        <div class="form-group">
+          <label for="dni">DNI</label>
+          <input type="text" class="form-control" id="dni" required [(ngModel)]="currentUsuario.dni" name="dni">
+          <div class="invalid-feedback">
+            Este campo es requerido.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" required [(ngModel)]="currentUsuario.nombre" name="nombre">
+          <div class="invalid-feedback">
+            Este campo es requerido.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" class="form-control" id="apellidos" required [(ngModel)]="currentUsuario.apellidos" name="apellidos">
+          <div class="invalid-feedback">
+            Este campo es requerido.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="usuario">Usuario</label>
+          <input type="text" class="form-control" id="usuario" required [(ngModel)]="currentUsuario.usuario" name="usuario">
+          <div class="invalid-feedback">
+            Este campo es requerido.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" class="form-control" id="contrasena" required [(ngModel)]="currentUsuario.contrasena" name="contrasena">
+          <div class="invalid-feedback">
+            Este campo es requerido.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="foto">Foto</label>
+          <input type="text" class="form-control" id="foto" [(ngModel)]="currentUsuario.foto" name="foto">
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección</label>
+          <input type="text" class="form-control" id="direccion" [(ngModel)]="currentUsuario.direccion" name="direccion">
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="text" class="form-control" id="telefono" [(ngModel)]="currentUsuario.telefono" name="telefono">
+        </div>
+        <div class="form-group">
+          <label for="tipoUsuario">Tipo de Usuario</label>
+          <select class="form-control" id="tipoUsuario" required [(ngModel)]="currentUsuario.tipoUsuario" name="tipoUsuario">
+            <option *ngFor="let tipo of tiposUsuarios" [value]="tipo.id">{{tipo.nombre}}</option>
+          </select>
+          <div class="invalid-feedback">
+            Este campo es requerido.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="activo">Activo</label>
+          <select class="form-control" id="activo" required [(ngModel)]="currentUsuario.activo" name="activo">
+            <option *ngFor="let estado of estadosPosibles" [value]="estado.value">{{estado.label}}</option>
+          </select>
+          <div class="invalid-feedback">
+            Este campo es requerido.
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary m-3">{{ isEditing ? 'Guardar' : 'Crear' }}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <ngb-accordion *ngIf="isProfesor()">
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <!-- Título del listado de usuarios -->
+        Lista de usuarios
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <!-- Contenido del listado de usuarios -->
+        <div class="container mt-3">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="searchText" (keyup)="applyFilter(filterField, searchText)">
+              </div>
+            </div>
+  
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" [(ngModel)]="filterField" (change)="applyFilter(filterField, searchText)">
+                  <option value="">Nombre</option>
+                  <option value="dni">DNI</option>
+                  <option value="apellidos">Apellidos</option>
+                  <option value="usuario">Usuario</option>
+                  <option value="direccion">Direccion</option>
+                  <option value="telefono">Telefono</option>
+                  <option value="tipoUsuario">Tipo Usuario</option>
+                  <option value="activo">Activo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="list-group m-3">
+          <div class="list-group-item d-flex justify-content-between" *ngFor="let usuario of filteredUsuarios">
+            <div>
+              {{ usuario.id }} - {{ usuario.nombre }} - {{ usuario.apellidos }}
+            </div>
+            <div>
+              <button class="btn btn-primary mr-2" (click)="editUsuario(usuario)">Editar</button>
+              <button class="btn btn-danger" (click)="deleteUsuario(usuario)">Borrar</button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+  
+</div>

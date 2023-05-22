@@ -2,6 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TipoUsuario } from './tipo-usuario';
 import { TipoUsuarioService } from './tipo-usuario.service';
+import { UsuarioService } from '../usuario/usuario.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tipo-usuario',
@@ -17,7 +19,13 @@ export class TipoUsuarioComponent implements OnInit {
   filteredTipoUsuarios: TipoUsuario[] = [];
   filterField: keyof TipoUsuario | '' = '';
 
-  constructor(private tipoUsuarioService: TipoUsuarioService) { }
+  constructor(private router: Router, private tipoUsuarioService: TipoUsuarioService, private usuarioService: UsuarioService, private route: ActivatedRoute) {
+    // Si no está logueado redirigir al login
+    if(!this.usuarioService.isLogged() && !this.usuarioService.isProfesor()) { 
+      // redirigir al login
+      this.router.navigate(['/login']);
+    }
+   }
 
   ngOnInit(): void {
     this.getAllTipoUsuarios();
@@ -32,7 +40,7 @@ export class TipoUsuarioComponent implements OnInit {
       error => {
         const errorMessage = this.getFirstErrorMessage(error.error.trace);
         confirm('Algo ha salido mal: \n' + errorMessage);
-        console.log(error);
+        // console.log(error);
       });
   }
 
@@ -42,14 +50,14 @@ export class TipoUsuarioComponent implements OnInit {
     } else {
       this.tipoUsuarioService.create(this.currentTipoUsuario).subscribe(
         response => {
-          console.log(response);
+          // console.log(response);
           this.getAllTipoUsuarios();
           confirm('Tipo Usuario creado correctamente');
         },
         error => {
           const errorMessage = this.getFirstErrorMessage(error.error.trace);
           confirm('Algo ha salido mal: \n' + errorMessage);
-          console.log(error);
+          // console.log(error);
         });
     }
     this.currentTipoUsuario = new TipoUsuario();
@@ -59,14 +67,14 @@ export class TipoUsuarioComponent implements OnInit {
   updateTipoUsuario(): void {
     this.tipoUsuarioService.update(this.currentTipoUsuario.id, this.currentTipoUsuario).subscribe(
       response => {
-        console.log(response);
+        // console.log(response);
         this.getAllTipoUsuarios();
         confirm('Tipo Usuario actualizado correctamente');
       },
       error => {
         const errorMessage = this.getFirstErrorMessage(error.error.trace);
         confirm('Algo ha salido mal: \n' + errorMessage);
-        console.log(error);
+        // console.log(error);
       });
   }
 
@@ -80,14 +88,14 @@ export class TipoUsuarioComponent implements OnInit {
     if (confirm('¿Estás seguro de que quieres eliminar este tipo de usuario?')) {
       this.tipoUsuarioService.delete(tipoUsuario.id).subscribe(
         response => {
-          console.log(response);
+          // console.log(response);
           this.getAllTipoUsuarios();
           confirm('Tipo Usuario borrado correctamente');
         },
         error => {
           const errorMessage = this.getFirstErrorMessage(error.error.trace);
           confirm('Algo ha salido mal: \n' + errorMessage);
-          console.log(error);
+          // console.log(error);
         });
     }
   }

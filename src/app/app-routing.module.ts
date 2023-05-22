@@ -8,6 +8,7 @@ import { PerfilAlumnoComponent } from './pages/perfil-alumno/perfil-alumno.compo
 import { BackNotasComponent } from './pages/back-notas/back-notas.component';
 import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.component';
 import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
 
 
 
@@ -23,6 +24,8 @@ const routes: Routes = [
       { path: 'backNotas', component: BackNotasComponent},
       { path: 'inicioAlumno', component: InicioAlumnoComponent},
       { path: 'tipoUsuario', component: TipoUsuarioComponent},
+      { path: 'registro', component: UsuarioComponent},
+      { path: 'usuario', component: UsuarioComponent},
 
 
       // esta tiene que ir la ultima, la de errors

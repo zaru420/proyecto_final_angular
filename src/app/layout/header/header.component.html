@@ -16,24 +16,27 @@
               <button>Buscar</button>
             </div>
           </li>
-          <li class="nav-item">
+          <li *ngIf="isProfesor()" class="nav-item">
+            <a class="nav-link btn btn-outline-info" routerLink="/tipoUsuario">Tipo Usuarios</a>
+          </li>
+          <li *ngIf="isProfesor()" class="nav-item">
+            <a class="nav-link btn btn-outline-info" routerLink="/usuario">Lista Usuarios</a>
+          </li>
+          <li *ngIf="isLogged()" class="nav-item">
+            <a class="nav-link btn btn-outline-info" routerLink="/backNotas">NOTAS</a>
+          </li>
+          <li *ngIf="isLogged()" class="nav-item">
+            <a class="nav-link btn btn-outline-info" routerLink="/perfilAlumno">PERFIL</a>
+          </li>
+          <li *ngIf="!isLogged()" class="nav-item">
             <a class="nav-link btn btn-outline-info" routerLink="/login">LOGIN</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link btn btn-outline-info" routerLink="/tipoUsuario">Tipo Usuarios</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-info" routerLink="/perfilAlumno">PERFIL ALUMNO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-info" routerLink="/inicioAlumno">INICIO ALUMNO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-info" routerLink="/backNotas">BACK NOTAS</a>
+          <li *ngIf="isLogged()" class="nav-item">
+            <a class="nav-link btn btn-outline-info" type="submit" (click)="logout()">LOGOUT</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </div>
-<app-notificaciones></app-notificaciones>
+<!-- <app-notificaciones></app-notificaciones> -->

@@ -14,10 +14,10 @@ import { NotFoundComponent } from './pages/errors/not-found/not-found.component'
 import { PerfilAlumnoComponent } from './pages/perfil-alumno/perfil-alumno.component';
 import { BackNotasComponent } from './pages/back-notas/back-notas.component';
 import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.component';
-import { AlumnosComponent } from './pages/alumnos/alumnos.component';
-import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
+// import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService } from './in-memory-data.service';
 
@@ -35,9 +35,9 @@ import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.componen
     PerfilAlumnoComponent,
     BackNotasComponent,
     InicioAlumnoComponent,
-    AlumnosComponent,
-    NotificacionesComponent,
+    // NotificacionesComponent,
     TipoUsuarioComponent,
+    UsuarioComponent,
   ],
   imports: [
     CommonModule,
