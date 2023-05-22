@@ -11,9 +11,13 @@
       </div>
       <div class="form-group">
         <label for="funciones">Funciones</label>
-        <input type="text" class="form-control" id="funciones" required [(ngModel)]="currentTipoUsuario.funciones" name="funciones">
+        <select class="form-control" id="funciones" required [(ngModel)]="currentTipoUsuario.funciones" name="funciones">
+          <option *ngFor="let funcion of funcionesPosibles" [value]="funcion">{{funcion}}</option>
+        </select>
       </div>
-      <button type="submit" class="btn btn-primary">{{ isEditing ? 'Guardar' : 'Crear' }}</button>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary m-3">{{ isEditing ? 'Guardar' : 'Crear' }}</button>
+      </div>
     </form>
   </div>
 

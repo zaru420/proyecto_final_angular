@@ -11,6 +11,7 @@ export class TipoUsuarioComponent implements OnInit {
   tipoUsuarios: TipoUsuario[] = [];
   currentTipoUsuario: TipoUsuario = new TipoUsuario();
   isEditing = false;
+  funcionesPosibles: string[] = ['Profesor', 'Alumno'];
 
   constructor(private tipoUsuarioService: TipoUsuarioService) { }
 
