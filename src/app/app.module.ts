@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { AsignaturasComponent } from './pages/asignaturas/asignaturas.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
+import { NotasComponent } from './pages/notas/notas.component';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService } from './in-memory-data.service';
 
@@ -40,6 +42,8 @@ import { AsignaturasComponent } from './pages/asignaturas/asignaturas.component'
     TipoUsuarioComponent,
     UsuarioComponent,
     AsignaturasComponent,
+    CursosComponent,
+    NotasComponent,
   ],
   imports: [
     CommonModule,
@@ -49,8 +53,7 @@ import { AsignaturasComponent } from './pages/asignaturas/asignaturas.component'
     NgbModule,
     HttpClientModule,
     // HttpClientInMemoryWebApiModule.forRoot(
-    // InMemoryDataService, { dataEncapsulation: false }
-    // )
+    // InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [],
   bootstrap: [AppComponent]
