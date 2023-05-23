@@ -1,0 +1,71 @@
+<!-- asignaturas.component.html -->
+<div class="container">
+    <h2>Asignaturas</h2>
+  
+    <!-- Formulario de edición/agregación -->
+    <div class="m-3">
+      <h3>{{ isEditing ? 'Editar' : 'Nueva' }} Asignatura</h3>
+      <form (ngSubmit)="createAsignatura()">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" required [(ngModel)]="currentAsignatura.nombre" name="nombre">
+        </div>
+        <div class="form-group">
+          <label for="idProfesor1">Profesor 1</label>
+          <select class="form-control" id="idProfesor1" required [(ngModel)]="currentAsignatura.idProfesor1" name="idProfesor1">
+            <option *ngFor="let profesor of profesores" [value]="profesor.id">{{ profesor.nombre }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="idProfesor2">Profesor 2</label>
+          <select class="form-control" id="idProfesor2" required [(ngModel)]="currentAsignatura.idProfesor2" name="idProfesor2">
+            <option *ngFor="let profesor of profesores" [value]="profesor.id">{{ profesor.nombre }}</option>
+          </select>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary m-3">{{ isEditing ? 'Guardar' : 'Crear' }}</button>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Lista de asignaturas -->
+    <ngb-accordion>
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          Lista de Asignaturas
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div class="container mt-3">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="searchText" (keyup)="applyFilter(filterField, searchText)">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <select class="form-control" [(ngModel)]="filterField" (change)="applyFilter(filterField, searchText)">
+                    <option value="">Nombre</option>
+                    <option value="idProfesor1">DNI Profesor 1</option>
+                    <option value="idProfesor2">DNI Profesor 2</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-group m-3">
+            <div class="list-group-item d-flex justify-content-between" *ngFor="let asignatura of filteredAsignaturas">
+              <div>
+                {{ asignatura.id }} - {{ asignatura.nombre }} - ID Profesor 1: {{ getProfesorNombre(asignatura.idProfesor1) }} - ID Profesor 2: {{ getProfesorNombre(asignatura.idProfesor2) }}
+              </div>
+              <div>
+                <button class="btn btn-primary mr-2" (click)="editAsignatura(asignatura)">Editar</button>
+                <button class="btn btn-danger" (click)="deleteAsignatura(asignatura)">Borrar</button>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+  

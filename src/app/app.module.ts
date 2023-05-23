@@ -18,6 +18,7 @@ import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.compo
 import { HttpClientModule } from '@angular/common/http';
 import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { AsignaturasComponent } from './pages/asignaturas/asignaturas.component';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService } from './in-memory-data.service';
 
@@ -38,6 +39,7 @@ import { UsuarioComponent } from './pages/usuario/usuario.component';
     // NotificacionesComponent,
     TipoUsuarioComponent,
     UsuarioComponent,
+    AsignaturasComponent,
   ],
   imports: [
     CommonModule,
