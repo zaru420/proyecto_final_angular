@@ -3,7 +3,7 @@
     <h2>Asignaturas</h2>
   
     <!-- Formulario de edición/agregación -->
-    <div class="m-3">
+    <div class="m-3" *ngIf="isProfesor() && isLogged()">
       <h3>{{ isEditing ? 'Editar' : 'Nueva' }} Asignatura</h3>
       <form (ngSubmit)="createAsignatura()">
         <div class="form-group">
@@ -58,7 +58,7 @@
               <div>
                 {{ asignatura.id }} - {{ asignatura.nombre }} - ID Profesor 1: {{ getProfesorNombre(asignatura.idProfesor1) }} - ID Profesor 2: {{ getProfesorNombre(asignatura.idProfesor2) }}
               </div>
-              <div>
+              <div *ngIf="isProfesor() && isLogged()">
                 <button class="btn btn-primary mr-2" (click)="editAsignatura(asignatura)">Editar</button>
                 <button class="btn btn-danger" (click)="deleteAsignatura(asignatura)">Borrar</button>
               </div>

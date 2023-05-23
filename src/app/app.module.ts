@@ -11,16 +11,13 @@ import { MasterPageComponent } from './layout/master-page/master-page.component'
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
-import { PerfilAlumnoComponent } from './pages/perfil-alumno/perfil-alumno.component';
-import { BackNotasComponent } from './pages/back-notas/back-notas.component';
-import { InicioAlumnoComponent } from './pages/inicio-alumno/inicio-alumno.component';
-// import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { AsignaturasComponent } from './pages/asignaturas/asignaturas.component';
-import { CursosComponent } from './pages/cursos/cursos.component';
 import { NotasComponent } from './pages/notas/notas.component';
+import { CursoComponent } from './pages/curso/curso.component';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService } from './in-memory-data.service';
 
@@ -35,14 +32,11 @@ import { NotasComponent } from './pages/notas/notas.component';
     LoginComponent,
     HomeComponent,
     NotFoundComponent,
-    PerfilAlumnoComponent,
-    BackNotasComponent,
-    InicioAlumnoComponent,
-    // NotificacionesComponent,
+    PerfilComponent,
     TipoUsuarioComponent,
     UsuarioComponent,
     AsignaturasComponent,
-    CursosComponent,
+    CursoComponent,
     NotasComponent,
   ],
   imports: [

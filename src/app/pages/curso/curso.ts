@@ -2,7 +2,6 @@
 export class Curso {
 
     id!: number;
-    nombre!: string;
     id_a1!: number;
     id_a2!: number;
     id_a3!: number;
@@ -13,11 +12,11 @@ export class Curso {
     id_a8!: number;
     id_a9!: number;
     id_a10!: number;
-
+    nombre!: string;
+    
     constructor() {
 
       this.id = 0;
-      this.nombre = "";
       this.id_a1 = 0;
       this.id_a2 = 0;
       this.id_a3 = 0;
@@ -28,6 +27,7 @@ export class Curso {
       this.id_a8 = 0;
       this.id_a9 = 0;
       this.id_a10 = 0;
+      this.nombre = "";
 
     }
   }

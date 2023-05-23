@@ -17,7 +17,8 @@ export class UsuarioService {
 
   //--------------------------------- CONSTRUCTOR ---------------------------------//
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<Usuario | null>(null);
+    const storedUser = localStorage.getItem('currentUser');
+    this.currentUserSubject = new BehaviorSubject<Usuario | null>(storedUser ? JSON.parse(storedUser) : null);
     this.currentUser = this.currentUserSubject.asObservable();
    }
 
@@ -109,6 +110,8 @@ export class UsuarioService {
       .pipe(map(usuario => {
         // Almacenar el usuario en el estado actual si el login es exitoso
         if (usuario && usuario.contrasena) {
+          // Almacenar el usuario en el almacenamiento local para habilitar el inicio de sesión hasta que reinicie el navegador
+          localStorage.setItem('currentUser', JSON.stringify(usuario));
           this.currentUserSubject.next(usuario);
         }
 
@@ -120,7 +123,8 @@ export class UsuarioService {
    * Cierra la sesion 
    */
   logout(): void {
-    // Eliminar el usuario del estado actual
+    // Eliminar el usuario del almacenamiento local
+    localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }
 }

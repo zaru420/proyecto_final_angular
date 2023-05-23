@@ -22,11 +22,17 @@
           <li *ngIf="isProfesor()" class="nav-item">
             <a class="nav-link btn btn-outline-info" routerLink="/usuario">Lista Usuarios</a>
           </li>
-          <li *ngIf="isLogged()" class="nav-item">
-            <a class="nav-link btn btn-outline-info" routerLink="/backNotas">NOTAS</a>
+          <li  class="nav-item">
+            <a class="nav-link btn btn-outline-info" routerLink="/curso">CURSOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-info" routerLink="/asignatura">ASIGNATURAS</a>
           </li>
           <li *ngIf="isLogged()" class="nav-item">
-            <a class="nav-link btn btn-outline-info" routerLink="/perfilAlumno">PERFIL</a>
+            <a class="nav-link btn btn-outline-info" routerLink="/nota">NOTAS</a>
+          </li>
+          <li *ngIf="isLogged()" class="nav-item">
+            <a class="nav-link btn btn-outline-info" routerLink="/perfil">PERFIL</a>
           </li>
           <li *ngIf="!isLogged()" class="nav-item">
             <a class="nav-link btn btn-outline-info" routerLink="/login">LOGIN</a>

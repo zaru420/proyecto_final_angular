@@ -19,6 +19,23 @@ export class AsignaturasComponent implements OnInit {
   profesores: { id: number;  dni: string; nombre: string; }[] = [];
 
   constructor(private asignaturasService: AsignaturasService, private usuarioService: UsuarioService) { }
+// Autenticación, el Profesor es el Admin
+isProfesor(): boolean {
+  // Verificar si el tipo de usuario es "profesor"
+  // Puedes usar la propiedad "tipoUsuario" del usuario actual para realizar la verificación
+  // Por ejemplo, si el tipo de usuario "profesor" tiene el ID 2:
+  // console.log(  this.usuarioService.isProfesor());
+  return this.usuarioService.isProfesor();
+}
+
+// Autenticación, el Profesor es el Admin
+isLogged(): boolean {
+  // Verificar si el tipo de usuario es "profesor"
+  // Puedes usar la propiedad "tipoUsuario" del usuario actual para realizar la verificación
+  // Por ejemplo, si el tipo de usuario "profesor" tiene el ID 2:
+  // console.log(  this.usuarioService.isLogged());
+  return this.usuarioService.isLogged();
+}
 
   ngOnInit(): void {
     this.getAllAsignaturas();

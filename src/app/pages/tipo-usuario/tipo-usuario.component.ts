@@ -21,9 +21,9 @@ export class TipoUsuarioComponent implements OnInit {
 
   constructor(private router: Router, private tipoUsuarioService: TipoUsuarioService, private usuarioService: UsuarioService, private route: ActivatedRoute) {
     // Si no está logueado redirigir al login
-    if(!this.usuarioService.isLogged() && !this.usuarioService.isProfesor()) { 
+    if(!this.usuarioService.isLogged() || !this.usuarioService.isProfesor()) { 
       // redirigir al login
-      this.router.navigate(['/login']);
+      this.router.navigate(['/error404']);
     }
    }
 

@@ -19,7 +19,8 @@ export class UsuarioComponent implements OnInit {
   searchText: string = '';
   filteredUsuarios: Usuario[] = [];
   filterField: keyof Usuario | '' = '';
-  ocultarFormulario: boolean = false;
+  mostrarFormulario: boolean = true;
+  mostrarListado: boolean = true;
 
   constructor(
     private router: Router,
@@ -30,21 +31,42 @@ export class UsuarioComponent implements OnInit {
   ) {
     // Personaliza la configuración del acordeón si es necesario
     config.closeOthers = true; // Cierra automáticamente otros paneles al abrir uno
-    // Si no está logueado redirigir al login
-    if(!this.usuarioService.isLogged() && !this.usuarioService.isProfesor()) { 
-      // Si el path no es registro, redirigir al login
-      if (this.route.snapshot.url[0].path !== 'registro') {
-        // redirigir al login
+    
+    // Si está logueado:
+    if(this.usuarioService.isLogged()) {
+      if (this.usuarioService.isProfesor()) {
+        // Si esta en la ruta de registro
+        if (this.route.snapshot.url[0].path === 'usuario') {
+          // Si esta en la ruta de usuario, dejamos que vea el crear usuario y la lista
+          this.mostrarFormulario = true;
+          this.mostrarListado = true ;
+
+        } else if (this.route.snapshot.url[0].path === 'notas') {
+          // Si el path es notas
+          this.mostrarFormulario = false;
+          this.mostrarListado = true;
+        } else {
+          // En caso de que este logueado como profesor y sea otra ruta, no se muestra nada
+          this.mostrarFormulario = false;
+          this.mostrarListado = false;
+        }
+      } else {
+        // En caso de que este logueado y no sea profesor, no se muestra nada
+        this.mostrarFormulario = false;
+        this.mostrarListado = false;
+      }
+    } else {
+      // Si no está logueado:
+      if (this.route.snapshot.url[0].path === 'registro') {
+        // Si esta en la ruta de registro dejamos que vea el crear usuario y ocultamos la lista
+        this.mostrarFormulario = true;
+        this.mostrarListado = false;
+
+      } else {
+        // En cualquier otro caso, el usuario no ha iniciado sesión y no tiene accesos
         this.router.navigate(['/login']);
       }
-    } else if(this.usuarioService.isLogged() && this.usuarioService.isProfesor()) { 
-      // Si el path es backNotas 
-      if (this.route.snapshot.url[0].path === 'backNotas') {
-        // no mostrar el formulario de crear usuario
-        this.ocultarFormulario = true;
-      } else{
-        this.ocultarFormulario= false;
-      }
+      
     }
   }
 
@@ -57,7 +79,9 @@ export class UsuarioComponent implements OnInit {
     // Verificar si el tipo de usuario es "profesor"
     // Puedes usar la propiedad "tipoUsuario" del usuario actual para realizar la verificación
     // Por ejemplo, si el tipo de usuario "profesor" tiene el ID 2:
+    
     return this.usuarioService.isProfesor();
+    
   }
   
 

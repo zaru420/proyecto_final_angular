@@ -1,0 +1,60 @@
+<p>cursos works!</p>
+<!-- cursos.component.html -->
+<div class="container">
+  <h2>Cursos</h2>
+
+  <!-- Formulario de edición/agregación -->
+  <div class="m-3" *ngIf="isProfesor() && isLogged()">
+    <h3>{{ isEditing ? 'Editar' : 'Nueva' }} Curso</h3>
+    <form (ngSubmit)="createCurso()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" required [(ngModel)]="currentCurso.nombre" name="nombre">
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary m-3">{{ isEditing ? 'Guardar' : 'Crear' }}</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Lista de cursos -->
+  <ngb-accordion>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        Lista de Cursos
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <div class="container mt-3">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="searchText" (keyup)="applyFilter(filterField, searchText)">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" [(ngModel)]="filterField" (change)="applyFilter(filterField, searchText)">
+                  <option value="">Nombre</option>
+                  <option value="asignatura">Asignatura</option>
+
+         
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="list-group m-3">
+          <div class="list-group-item d-flex justify-content-between" *ngFor="let curso of filteredCursos">
+            <div>
+              {{ curso.id }} - {{ curso.nombre }} <!--  - {{curso.asignatura}} -->
+            </div>
+            <div *ngIf="isProfesor() && isLogged()">
+              <button class="btn btn-primary mr-2" (click)="editCurso(curso)">Editar</button>
+              <button class="btn btn-danger" (click)="deleteCurso(curso)">Borrar</button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>

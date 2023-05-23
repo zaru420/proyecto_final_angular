@@ -1,8 +1,8 @@
 
-<div class="container">
+<div class="container" *ngIf="mostrarFormulario || mostrarListado">
   <h2>Usuarios</h2>
 
-  <div *ngIf="!ocultarFormulario">
+  <div *ngIf="mostrarFormulario">
     <!-- Título del formulario -->
     <h3>{{ isEditing ? 'Editar' : 'Nuevo' }} Usuario</h3>
     <div class="m-3">
@@ -79,7 +79,7 @@
     </div>
   </div>
   
-  <ngb-accordion *ngIf="isProfesor()">
+  <ngb-accordion *ngIf="mostrarListado">
     <ngb-panel>
       <ng-template ngbPanelTitle>
         <!-- Título del listado de usuarios -->
